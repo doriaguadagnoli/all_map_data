@@ -43,9 +43,9 @@ Use the following Mapbox tileset IDs when importing layers into Mapbox Studio.
 
 | CSV Filename                              | Mapbox Layer Name               | Mapbox ID                          |
 |------------------------------------------|--------------------------------|------------------------------------|
-| their_eyes_items_purchased_by_location.csv | their_eyes_items_layer          | `yourusername.their_eyes_items`     |
-| their_eyes_location_type_count.csv        | their_eyes_location_count_layer | `yourusername.their_eyes_loc_count` |
-| their_eyes_purchased_from_location.csv    | their_eyes_purchased_from_layer | `burgerjh.5qhs3wn4`    |
+| their_eyes_items_purchased_by_location.csv | their_eyes_items_purchased_by-4jct68          | `burgerjh.0yfcp5b6`     |
+| their_eyes_location_type_count.csv        | their_eyes_location_type_coun-dlgcuv | `burgerjh.4e3g2fm2` |
+| their_eyes_purchased_from_location.csv    | their_eyes_purchased_from_loc-cjaye0 | `burgerjh.0dyfhlru`    |
 | their_eyes_purchaser_location.csv         | their_eyes_purchaser_location-5lu1q1      | `burgerjh.5qhs3wn4` |
 | color_purple_items_purchased_by_location.csv | color_purple_items_layer      | `yourusername.color_purple_items`   |
 | color_purple_location_type_count.csv      | color_purple_location_count_layer | `yourusername.color_purple_loc_count` |
