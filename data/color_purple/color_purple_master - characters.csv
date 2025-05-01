@@ -1,0 +1,29 @@
+name,race,gender,class,class_variable,job
+Adam,Black,Male,Middle,FALSE,Student
+Africans,Group,Group,Poor,TRUE,
+Albert/Mr. ___,Black,Male,Lower,FALSE,Landowner ; Farmer
+Alphonso,Black,Male,Lower,TRUE,Farmer
+Carrie,Black,Female,Lower,FALSE,
+Cathrine,Black,Female,Middle,FALSE,Farmer
+Celie,Black,Female,Poor,TRUE,House Wife ; Farmer ; Seamstress
+Corrine,Black,Female,Middle,TRUE,Missionary
+Daisy ,Black,Female,Lower,TRUE,
+Englishmen,White,Male,Middle,TRUE,Traders
+Harpo,Black,Male,Lower,TRUE,Farmer ; Business Owner
+Kate,Black,Female,Lower,FALSE,Maid 
+Miss Millie ,White,Female,Middle,FALSE,Homemaker
+Nettie,Black,Female,Lower,TRUE,Missionary
+Olivia,Black,Female,Middle,FALSE,Student
+Samuel,Black,Male,Middle,TRUE,Minister ; Missionary
+Shug Avery,Black,Female,Middle,TRUE,Singer
+Sofia,Black,Female,Lower,FALSE,Homemaker ; Prisoner ; Maid
+Tashi,Black,Female,Lower,FALSE,Student
+The Chief,Black,Male,Upper,FALSE,Tribal leader
+The English Rubber Company,White,Group,Upper,FALSE,Corporation
+The Inhabintants of West Coast Africa,Black,Group,Middle,FALSE,Unknown
+The Mayor/Millie's Husband,White,Male,Middle,FALSE,The Mayor 
+The Olinkas,Black,Group,Lower,FALSE,Farmer
+The Roadbuilders,Black,Male,Lower,FALSE,Construction worker
+Unknown,,,,,
+Unnamed store clerk dress store,White,Male,Lower,FALSE,Salesman
+Unnamed store clerk fabric,White,Male,Lower,FALSE,Salesman

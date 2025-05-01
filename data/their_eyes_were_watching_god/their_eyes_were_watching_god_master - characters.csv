@@ -1,0 +1,25 @@
+name,race,gender,class,class_variable,job
+Coodemay,Black,Male,Lower,FALSE,farmer
+Dr. Simmons,White,Male,Middle,FALSE,doctor
+Everybody in restaurant,Group,Group,Lower,FALSE,farmer
+Janie,Black,Female,Middle,TRUE,cashier
+Janie and Tea Cake together,Group,Group,Lower,TRUE,"farmer, gambler"
+Jim Weston,Black,Male,Lower,FALSE,farmer
+"Killicks, Logan",Black,Male,Lower,FALSE,farmer
+Matt Bonner,Black,Male,Poor,FALSE,farmer
+Miss Washburn,White,Female,Upper,FALSE,unemployed
+Mrs. robbins,Black,Female,Poor,FALSE,unemployed
+Mrs. Turner,MixedAncestry,Female,Middle,FALSE,business owner
+Nanny,Black,Female,Lower,FALSE,farmer
+people,Group,Group,Lower,FALSE,
+"Starks, Jody",Black,Male,Middle,TRUE,business owner
+Sterrett,Black,Male,Lower,FALSE,farmer
+steve mixon,Black,Male,Lower,FALSE,
+Supplier in Jacksonville,Unknowable,Unknowable,Upper,FALSE,
+Tea Cake,Black,Male,Lower,FALSE,gambler
+Tony,Black,Female,Lower,FALSE,unemployed
+Unamed Young Man,Unknowable,Unknowable,Poor,FALSE,
+Unknown,Unknowable,Unknowable,Lower,FALSE,
+unknown,White,Male,Upper,FALSE,
+"unknown man, Logan see about the mule",Black,Male,Lower,FALSE,farmer
+Unknown photographer,White,Male,Middle,FALSE,business owner

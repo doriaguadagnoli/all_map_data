@@ -1,0 +1,291 @@
+---
+title: "Novel Purchase Demographics"
+execute:
+  echo: false
+  warning: false
+format:
+  html:
+    embed-resources: true
+---
+
+```{r setup}
+library(tidyverse)
+
+# Define novels and base data path
+# Get all novel folders inside "data/"
+novel_dirs <- list.dirs("data", full.names = FALSE, recursive = FALSE)
+base_path <- "data"
+
+# Create refined data folder
+if (!dir.exists("refined_data")) {
+  dir.create("refined_data")
+}
+
+```
+
+
+```{r helper_functions}
+summarise_identity <- function(df, var) {
+  out <- df %>%
+    group_by(location, lat, long, !!sym(var)) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    pivot_wider(
+      names_from = !!sym(var),
+      values_from = count,
+      values_fill = 0,
+      names_prefix = paste0(var, "_")  # <-- add prefix like "gender_", "class_", etc.
+    )
+  return(out)
+}
+```
+
+
+
+
+```{r helper_functions_2}
+generate_demographics <- function(all_locations, characters, role_col = "purchaser") {
+  # Step 1: Join on role (either "purchaser" or "purchased_from")
+  df <- all_locations %>%
+    inner_join(characters, by = setNames("name", role_col)) %>%
+    filter(location_type == "economic")
+  
+  # Step 2: Expand by job
+  df_counts <- df %>%
+    mutate(row_id = row_number()) %>%
+    separate_rows(job, sep = ";\\s*") %>%
+    mutate(value = 1) %>%
+    pivot_wider(
+      names_from = job,
+      values_from = value,
+      values_fill = 0,
+      id_cols = row_id
+    ) %>%
+    left_join(df %>% mutate(row_id = row_number()), by = "row_id") %>%
+    select(-row_id) %>%
+    relocate(where(is.numeric), .after = job)
+  
+  # Step 3: Helper to summarize identities
+  
+  
+  # Step 4: Demographic summary
+  df_location <- df_counts %>%
+    group_by(location, lat, long) %>%
+    summarise(
+      total_characters = n(),
+      across(where(is.numeric), sum, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    left_join(summarise_identity(df_counts, "gender"), by = c("location", "lat", "long")) %>%
+    left_join(summarise_identity(df_counts, "race"),   by = c("location", "lat", "long")) %>%
+    left_join(summarise_identity(df_counts, "class"),  by = c("location", "lat", "long")) %>%
+    drop_na(lat) %>%
+    select(!matches("NA|page"))
+  
+  return(df_location)
+}
+```
+
+
+
+```{r process_novels}
+
+process_novel <- function(novel) {
+  
+  
+  if (novel == "as_i_lay_dying") {
+  message("Skipping novel '", novel, "' because it is excluded.")
+  return(NULL)
+}
+  
+  
+  
+   data_path <- file.path("data", novel)
+  # Read CSVs
+  # List all CSV files in the novel's data folder
+csv_files <- list.files(file.path("data", novel), pattern = "\\.csv$", full.names = TRUE)
+
+# Use pattern matching to assign files
+primary_path   <- csv_files[str_detect(csv_files, "primary")]
+locations_path <- csv_files[str_detect(csv_files, "locations")]
+characters_path <- csv_files[str_detect(csv_files, "characters")]
+
+if (length(primary_path) != 1 || length(locations_path) != 1 || length(characters_path) != 1) {
+  message("Skipping novel '", novel, "' because required file(s) are missing or duplicated.")
+  return(NULL)
+}
+
+
+# Read the CSVs
+primary_sheet <- read_csv(primary_path, show_col_types = FALSE)
+locations     <- read_csv(locations_path, show_col_types = FALSE)
+characters    <- read_csv(characters_path, show_col_types = FALSE)
+
+
+all_locations <- primary_sheet %>% 
+  drop_na(first_6_words) %>%
+  left_join(locations, by = c("location" = "name")) %>%
+    relocate(coordinates, .after = location) %>%
+    separate(coordinates, into = c("lat", "long"), sep = ", ", convert = TRUE)
+
+ # Location type count
+  location_type_count <- all_locations %>%
+    group_by(location, lat, long) %>%
+    count(location_type) %>%
+    drop_na(location_type) %>% 
+    drop_na(lat)
+
+
+
+  
+ 
+# For purchaser demographics
+purchaser_location <- generate_demographics(all_locations, characters, role_col = "purchaser")
+
+# For purchased_from demographics
+purchased_from_location <- generate_demographics(all_locations, characters, role_col = "purchased_from")
+  
+  
+
+
+  # Items purchased by location
+  items_purchased_by_location <- all_locations %>%
+    filter(location_type=="economic") %>% 
+    group_by(location,lat,long) %>% 
+    count(item_purchased) %>% 
+    pivot_wider(names_from = item_purchased, values_from = n)
+    
+   out_path <- file.path("refined_data", novel)
+if (!dir.exists(out_path)) dir.create(out_path)
+
+# Helper function to build filenames
+output_file <- function(name) file.path(out_path, paste0(novel, "_", name, ".csv"))
+
+# Write outputs
+write_csv(location_type_count, output_file("location_type_count"))
+write_csv(purchaser_location, output_file("purchaser_location"))
+
+write_csv(purchased_from_location, output_file("purchased_from_location"))
+write_csv(items_purchased_by_location, output_file("items_purchased_by_location"))
+ }
+
+
+```
+
+```{r}
+# Run for all novels
+walk(novel_dirs, process_novel)
+```
+
+
+```{r}
+dy_data <- read_csv("data/as_i_lay_dying/events.csv")
+```
+
+```{r}
+aild_events <- dy_data %>% 
+               filter(SourceTextCode=="LD")
+```
+
+```{r}
+characters <- read_csv("data/as_i_lay_dying/characters.csv")
+```
+
+```{r}
+aild_event_characters <- aild_events %>% 
+                         separate_rows(CharactersPresent) %>%   
+                         select(PageNumber:CharactersPresent,OrderWithinPage, kw_actions) %>% 
+  mutate(CharactersPresent= as.numeric(CharactersPresent)) %>% 
+  left_join(characters, by=c("CharactersPresent"="Nid")) %>% 
+  select(1:7,10,12:14,18)
+                      
+```
+
+```{r}
+locations <- read_csv("data/as_i_lay_dying/locations.csv")
+
+
+locations <- locations %>% 
+              filter(SourceTextCode=="LD") %>% 
+            select(3:4)
+
+```
+
+
+
+```{r}
+aild_event_locations <- aild_event_characters %>% 
+                        left_join(locations, by=c("LocationCode"="LocationKey"))
+```
+
+```{r}
+unique_locations <- aild_event_locations %>% 
+                    distinct(LocationTitle)
+write_csv(unique_locations, "data/as_i_lay_dying/unique_locations.csv")
+```
+
+```{r}
+unique_locations_tagged <- read_csv("data/as_i_lay_dying/unique_locations_tagged.csv")
+```
+```{r}
+all_aild_tagged <- aild_event_locations %>% 
+                  left_join(unique_locations_tagged)
+```
+
+```{r}
+all_aild_tagged_location <- all_aild_tagged %>% 
+                          mutate(location_type =  ifelse(str_detect(kw_actions,"Economic"),"economic","movement")) %>% 
+  distinct(OrderWithinPage, .keep_all = TRUE) %>% 
+  arrange(OrderWithinPage)
+```
+
+```{r}
+all_aild_typed <- all_aild_tagged_location %>% 
+  mutate(
+    next_location = lead(Location),
+    new_location_type = case_when(
+      location_type == "economic" ~ "economic",
+      Location != next_location ~ "movement",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  select(-location_type, -next_location) %>%
+  rename(location_type = new_location_type) %>% 
+  separate(coordinates, into = c("lat", "long"), sep = ", ", convert = TRUE) %>% 
+  rename(location=Location)
+```
+
+```{r}
+aild_location_type_count <- all_aild_typed %>% 
+  group_by(location, lat, long) %>%
+    count(location_type) %>%
+    drop_na(location_type) %>% 
+    drop_na(lat)
+```
+
+```{r}
+all_aild_typed_economic <- all_aild_typed %>% 
+              filter(location_type=="economic")
+
+aild_economic_count <- all_aild_typed_economic %>% 
+    
+ 
+  group_by(location, lat, long) %>%
+    summarise(
+      total_characters = n(),
+      
+      .groups = "drop"
+    ) %>% 
+    left_join(summarise_identity(all_aild_typed_economic, "Gender"), by = c("location", "lat", "long")) %>% 
+    left_join(summarise_identity(all_aild_typed_economic, "Race"),   by = c("location", "lat", "long")) %>%
+    left_join(summarise_identity(all_aild_typed_economic, "Class"),  by = c("location", "lat", "long")) %>%
+    drop_na(lat) 
+```
+
+```{r}
+write_csv (aild_location_type_count, "refined_data/as_i_lay_dying/location_type_count.csv")
+```
+
+```{r}
+write_csv(aild_economic_count, "refined_data/as_i_lay_dying/aild_economic_count.csv")
+```
+

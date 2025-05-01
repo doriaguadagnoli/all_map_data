@@ -1,0 +1,14 @@
+name,race,gender,class,class_variable,job
+Big Henry,Black,Male,Lower,FALSE,unemployed
+Skeetah,Black,Male,Poor,FALSE,"groundskeeper, dog fighter"
+Cashier at grocery store,White,Female,Lower,FALSE,cashier
+Unknown cashier,Unknowable,Unknowable,Lower,FALSE,cashier
+Daddy,Black,Male,Poor,FALSE,unemployed
+Randall,Black,Male,Poor,FALSE,unemployed
+Junior,Black,Male,Poor,FALSE,unemployed
+Esch,Black,Female,Poor,FALSE,unemployed
+The Old Man and his Wife,White,Group,Middle,FALSE,farmer
+Unnamed ,,,,,
+Manny,Black,Male,Poor,FALSE,unemployed
+Rico,Black,Male,Poor,FALSE,"unemployed, dog fighter"
+Mama,Black,Female,Poor,FALSE,unemployed
