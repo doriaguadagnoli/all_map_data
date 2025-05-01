@@ -51,10 +51,10 @@ Use the following Mapbox tileset IDs when importing layers into Mapbox Studio.
 | color_purple_location_type_count.csv      | color_purple_location_count_layer | `yourusername.color_purple_loc_count` |
 | color_purple_purchased_from_location.csv  | color_purple_purchased_from_layer | `yourusername.color_purple_seller`  |
 | color_purple_purchaser_location.csv       | color_purple_purchaser_layer    | `yourusername.color_purple_purchaser` |
-| salvage_bones_items_purchased_by_location.csv | salvage_bones_items_layer    | `yourusername.salvage_bones_items`  |
-| salvage_bones_location_type_count.csv     | salvage_bones_location_count_layer | `yourusername.salvage_bones_loc_count` |
-| salvage_bones_purchased_from_location.csv | salvage_bones_purchased_from_layer | `yourusername.salvage_bones_seller` |
-| salvage_bones_purchaser_location.csv      | salvage_bones_purchaser_layer   | `yourusername.salvage_bones_purchaser` |
+| salvage_bones_items_purchased_by_location.csv | salvage_the_bones_items_purch-403qoi    | `burgerjh.d86s9bva`  |
+| salvage_bones_location_type_count.csv     | salvage_the_bones_location_ty-2kcm4c | `burgerjh.5nprtd1s` |
+| salvage_bones_purchased_from_location.csv | salvage_the_bones_purchased_f-653q5m | `burgerjh.3p4636ib` |
+| salvage_bones_purchaser_location.csv      | salvage_the_bones_purchaser_l-9jqcjq   | `burgerjh.81rv5t56` |
 | shell_shaker_items_purchased_by_location.csv | shell_shaker_items_layer      | `yourusername.shell_shaker_items`   |
 | shell_shaker_location_type_count.csv      | shell_shaker_location_count_layer | `yourusername.shell_shaker_loc_count` |
 | shell_shaker_purchased_from_location.csv  | shell_shaker_purchased_from_layer | `yourusername.shell_shaker_seller`  |
