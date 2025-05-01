@@ -47,10 +47,10 @@ Use the following Mapbox tileset IDs when importing layers into Mapbox Studio.
 | their_eyes_location_type_count.csv        | their_eyes_location_type_coun-dlgcuv | `burgerjh.4e3g2fm2` |
 | their_eyes_purchased_from_location.csv    | their_eyes_purchased_from_loc-cjaye0 | `burgerjh.0dyfhlru`    |
 | their_eyes_purchaser_location.csv         | their_eyes_purchaser_location-5lu1q1      | `burgerjh.5qhs3wn4` |
-| color_purple_items_purchased_by_location.csv | color_purple_items_layer      | `yourusername.color_purple_items`   |
-| color_purple_location_type_count.csv      | color_purple_location_count_layer | `yourusername.color_purple_loc_count` |
-| color_purple_purchased_from_location.csv  | color_purple_purchased_from_layer | `yourusername.color_purple_seller`  |
-| color_purple_purchaser_location.csv       | color_purple_purchaser_layer    | `yourusername.color_purple_purchaser` |
+| color_purple_items_purchased_by_location.csv | color_purple_items_purchased_-bvhiq7      | `burgerjh.19zeh070`   |
+| color_purple_location_type_count.csv      | color_purple_location_type_co-b8thji | `burgerjh.ajzgbuiz` |
+| color_purple_purchased_from_location.csv  | color_purple_purchased_from_l-6q1wvs  | `burgerjh.awjw9ty8`  |
+| color_purple_purchaser_location.csv       | color_purple_purchaser_locati-1r6303 | `burgerjh.b38x1pvx` |
 | salvage_bones_items_purchased_by_location.csv | salvage_the_bones_items_purch-403qoi    | `burgerjh.d86s9bva`  |
 | salvage_bones_location_type_count.csv     | salvage_the_bones_location_ty-2kcm4c | `burgerjh.5nprtd1s` |
 | salvage_bones_purchased_from_location.csv | salvage_the_bones_purchased_f-653q5m | `burgerjh.3p4636ib` |
