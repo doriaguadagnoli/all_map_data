@@ -43,6 +43,8 @@ Use the following Mapbox tileset IDs when importing layers into Mapbox Studio.
 
 | CSV Filename                              | Mapbox Layer Name               | Mapbox ID                          |
 |------------------------------------------|--------------------------------|------------------------------------|
+| aild_economic_count.csv | aild_economic_count-7ykpxd | `burgerjh.0yfcp5b6`     |burgerjh.ci8mwu3n|
+| their_eyes_location_type_count.csv        | their_eyes_location_type_coun-dlgcuv | `burgerjh.4e3g2fm2` |
 | their_eyes_items_purchased_by_location.csv | their_eyes_items_purchased_by-4jct68          | `burgerjh.0yfcp5b6`     |
 | their_eyes_location_type_count.csv        | their_eyes_location_type_coun-dlgcuv | `burgerjh.4e3g2fm2` |
 | their_eyes_purchased_from_location.csv    | their_eyes_purchased_from_loc-cjaye0 | `burgerjh.0dyfhlru`    |
