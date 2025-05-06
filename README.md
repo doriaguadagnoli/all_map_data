@@ -90,10 +90,10 @@ To import a tileset:
 | salvage_bones_location_type_count.csv     | salvage_the_bones_location_ty-2kcm4c | `burgerjh.5nprtd1s`          |
 | salvage_bones_purchased_from_location.csv | salvage_the_bones_purchased_f-653q5m | `burgerjh.3p4636ib`          |
 | salvage_bones_purchaser_location.csv      | salvage_the_bones_purchaser_l-9jqcjq | `burgerjh.81rv5t56`          |
-| shell_shaker_items_purchased_by_location.csv | shell_shaker_items_layer        | `yourusername.shell_shaker_items`   |
-| shell_shaker_location_type_count.csv      | shell_shaker_location_count_layer | `yourusername.shell_shaker_loc_count` |
-| shell_shaker_purchased_from_location.csv  | shell_shaker_purchased_from_layer | `yourusername.shell_shaker_seller`  |
-| shell_shaker_purchaser_location.csv       | shell_shaker_purchaser_layer     | `yourusername.shell_shaker_purchaser` |
+| shell_shaker_items_purchased_by_location.csv | shell_shaker_items_purchased_-0clq71        | `burgerjh.ajwy41h1`   |
+| shell_shaker_location_type_count.csv      | shell_shaker_location_type_co-b1tgqx | `burgerjh.ddpgdoel` |
+| shell_shaker_purchased_from_location.csv  | shell_shaker_purchased_from_l-3b6v3a | `burgerjh.dbsvw2nu`  |
+| shell_shaker_purchaser_location.csv       | shell_shaker_purchaser_locati-361na1     | `burgerjh.3i0i4wf9` |
 
 ---
 
