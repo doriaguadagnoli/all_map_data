@@ -1,25 +1,25 @@
 location,lat,long,location_type,n
-"Auda's home, Oklahoma",34.035492661171936,-95.70165425925988,economic,2
-"Auda's home, Oklahoma",34.035492661171936,-95.70165425925988,movement,1
-Billy House,33.998387941122296,-96.38395620852859,movement,4
-Casino of the Sun,33.95130278659647,-96.41371298338967,economic,6
-Choctaw Nation Tribal Courthouse,34.7743341386367,-95.0456121467367,movement,2
-Choctaw National Headquarters,33.9738135336593,-96.39809681164074,economic,1
-Choctaw National Regional Clinic,33.97434742077366,-96.40118672692857,economic,1
-Choctaw National Regional Clinic,33.97434742077366,-96.40118672692857,movement,1
+"Auda's home, Oklahoma",34.035492661171936,-95.70165426,economic,2
+"Auda's home, Oklahoma",34.035492661171936,-95.70165426,movement,1
+Billy House,33.998387941122296,-96.38395621,movement,4
+Casino of the Sun,33.95130278659647,-96.41371298,economic,6
+Choctaw Nation Tribal Courthouse,34.77433414,-95.04561215,movement,2
+Choctaw National Headquarters,33.97381353,-96.39809681,economic,1
+Choctaw National Regional Clinic,33.97434742077366,-96.40118673,economic,1
+Choctaw National Regional Clinic,33.97434742077366,-96.40118673,movement,1
 "Dallas, Texas",32.983351999999996,-96.755356,movement,2
-"Durant, Oklahoma",33.99358462584947,-96.39455629842246,economic,10
-"Durant, Oklahoma",33.99358462584947,-96.39455629842246,movement,3
-Hotel that Adair and Gore visit,40.704694239542256,-74.0100622551784,movement,2
-Ireland,53.14757320155134,-8.0430453141119,movement,2
+"Durant, Oklahoma",33.99358462584947,-96.3945563,economic,10
+"Durant, Oklahoma",33.99358462584947,-96.3945563,movement,3
+Hotel that Adair and Gore visit,40.704694239542256,-74.01006226,movement,2
+Ireland,53.14757320155134,-8.043045314,movement,2
 "New Orleans, Louisiana",29.945152,-90.062742,movement,1
-"New York, New York",-74.00423596660983,40.7126402750467,movement,1
-Oklahoma City,35.47376740380787,-97.52415532825404,economic,1
-"Okmulgee, Oklahoma",-95.93820852556478,35.628089981135595,economic,1
+"New York, New York",-74.00423597,40.71264028,movement,1
+Oklahoma City,35.47376740380787,-97.52415533,economic,1
+"Okmulgee, Oklahoma",35.628089981135595,-95.93820853,economic,1
 "Paris, France",48.85521137152912,2.3477182200958278,movement,2
-"Pearl River, Louisiana",30.35713296671525,-89.76737311776155,economic,1
-"Pearl River, Louisiana",30.35713296671525,-89.76737311776155,movement,2
-"Talihina, Oklahoma",34.75140310228323,-95.048016624865,movement,2
-"Talihina, Rocky Road",34.60194427049413,-94.24253939911544,movement,1
-Yanàbi Town,32.660613587223,-88.77688348338069,economic,8
-Yanàbi Town,32.660613587223,-88.77688348338069,movement,2
+"Pearl River, Louisiana",30.35713296671525,-89.76737312,economic,1
+"Pearl River, Louisiana",30.35713296671525,-89.76737312,movement,2
+"Talihina, Oklahoma",34.75140310228323,-95.04801662,movement,2
+"Talihina, Rocky Road",34.60194427049413,-94.2425394,movement,1
+Yanàbi Town,32.66061359,-88.77688348,economic,8
+Yanàbi Town,32.66061359,-88.77688348,movement,2
