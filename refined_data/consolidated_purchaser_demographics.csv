@@ -1,0 +1,47 @@
+novel,location,lat,long,race_Black,race_White,gender_Female,gender_Male,class_Lower,class_Middle,class_Poor,class_Upper,Black_Female,White_Male,Black_Male,race_NativeAmerican,NativeAmerican_Female,NativeAmerican_Male,NativeAmerican_Group,White_Female
+color_purple,Celie Childhood home,33.02050024570996,-83.3850089234675,4,0,0,4,4,0,0,0,0,0,4,0,0,0,0,0
+color_purple,Unnamed store in town (fabric),33.00037436173625,-83.55293525513748,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0
+color_purple,Unnamed store in town (dress),33.00212893882091,-83.55048908066463,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+color_purple,Celie and Albert House,32.99976696381827,-83.5599840688572,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0
+color_purple,Harpo and Sofia's house,33.00023939282284,-83.55957640425451,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0
+color_purple,Miss Milli's house,32.999402580951326,-83.557033670263,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0
+color_purple,Olinka Village,6.251275915595865,-10.378889436404226,2,1,1,0,2,0,0,1,1,0,0,0,0,0,0,0
+color_purple,Africa,5.369085,-9.236846,2,1,2,1,2,1,0,0,2,1,0,0,0,0,0,0
+color_purple,Unknown place where Shug buys her clothing,35.13713103323558,-90.05711609106096,2,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0
+color_purple,Unknown place where Shug buys her car,35.1423794559834,-90.05283734326031,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0
+color_purple,"Memphis, TN",35.15221330647191,-90.06958208625237,3,0,3,0,0,2,1,0,3,0,0,0,0,0,0,0
+color_purple,Unknown town in Georgia,0,0,2,0,2,0,1,1,0,0,2,0,0,0,0,0,0,0
+color_purple,West Coast Africa,16.186562850355916,-16.665029397655395,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+color_purple,Monrovia,6.310806,-10.810706,2,0,2,0,2,0,0,0,2,0,0,0,0,0,0,0
+color_purple,London,51.505154784266445,-0.14148688031308002,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+color_purple,Celie's house,33.0095,-83.56,4,0,1,3,3,0,1,0,1,0,3,0,0,0,0,0
+salvage_the_bones,Gas station near interstate,30.403299510701547,-89.2676805526253,2,0,1,1,1,0,1,0,1,0,1,0,0,0,0,0
+salvage_the_bones,Grocery store in St. Catherine,30.443067376446155,-89.0553816234266,3,0,1,2,0,0,3,0,1,0,2,0,0,0,0,0
+salvage_the_bones,Feed store,30.47949097202286,-88.84421123466053,1,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0
+salvage_the_bones,Batiste Property,30.400637931513852,-89.26806244331303,6,0,2,4,0,0,6,0,2,0,4,0,0,0,0,0
+salvage_the_bones,"""Some White People's House"" and their barn",30.40185596106536,-89.26908066564593,1,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0
+salvage_the_bones,Mudda Ma'am's house,30.400578957060162,-89.26581373526444,1,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0
+salvage_the_bones,"Bois Sauvage, MS",30.37877669386771,-89.26344602946764,2,0,0,2,0,0,2,0,0,0,2,0,0,0,0,0
+salvage_the_bones,"St. Catherine, MS",30.315668959405787,-89.23958509830771,2,0,0,2,0,0,2,0,0,0,2,0,0,0,0,0
+shell_shaker,Yanàbi Town,32.660613587223,-88.77688348338069,0,0,7,0,0,0,0,0,0,0,0,7,7,0,0,0
+shell_shaker,NA,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+shell_shaker,"Durant, Oklahoma",33.99358462584947,-96.39455629842246,0,1,3,5,0,3,1,5,0,0,0,8,3,5,0,0
+shell_shaker,"Auda's home, Oklahoma",34.035492661171936,-95.70165425925988,0,0,1,1,0,1,0,1,0,0,0,2,1,1,0,0
+shell_shaker,"Okmulgee, Oklahoma",-95.93820852556478,35.628089981135595,0,0,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+shell_shaker,Casino of the Sun,33.95130278659647,-96.41371298338967,0,0,0,4,0,0,0,4,0,0,0,4,0,4,0,0
+shell_shaker,Oklahoma City,35.47376740380787,-97.52415532825404,0,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0
+shell_shaker,Choctaw National Headquarters,33.9738135336593,-96.39809681164074,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+shell_shaker,"Pearl River, Louisiana",30.35713296671525,-89.76737311776155,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+shell_shaker,Choctaw National Regional Clinic,33.97434742077366,-96.40118672692857,0,0,0,1,0,0,0,1,0,0,0,1,0,1,0,0
+their_eyes,West Florida,30.1964196653029,-82.75701828222084,1,1,2,0,1,0,0,1,1,0,0,0,0,0,0,1
+their_eyes,Lake City,30.189575765834622,-82.63817807919271,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0
+their_eyes,Eatonville,28.618579170446417,-81.38643808791495,11,0,3,8,5,5,1,0,3,0,8,0,0,0,0,0
+their_eyes,Unknown Place where Tea Cake buys car,28.559097751714123,-81.41983351361162,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0
+their_eyes,Orlando,28.54026337989474,-81.39224619001222,15,0,3,12,13,3,0,0,3,0,12,0,0,0,0,0
+their_eyes,Maitland,28.627213436693335,-81.35370630800469,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+their_eyes,Palm Beach,26.72641853933976,-80.00582721665843,1,0,0,1,2,0,0,0,0,0,1,0,0,0,0,0
+their_eyes,Janie and Tea Cake's House,26.834751662280585,-80.44334557182601,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0
+their_eyes,Everglades,26.880865479163457,-80.44804338021213,4,0,3,1,2,3,0,0,3,0,1,0,0,0,0,0
+their_eyes,Fort Myers,26.64227,-81.8691,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+their_eyes,Fort Lauderdale,26.12416,-80.14305,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+their_eyes,Okeechobee,27.24094388979997,-80.83412875570062,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0

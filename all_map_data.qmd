@@ -287,13 +287,14 @@ glimpse(all_data)
 
 ```{r}
 all_data_demographic <- all_data %>% 
-                select(!c(race_NA,gender_Group,gender_NA,class_NA,Black_Group,NA_NA,race_Group,Group_Group,race_Unknowable,gender_Unknowable,Unknowable_Unknowable,White_Group)) %>% 
-           relocate(novel)
+  select(!c(race_NA, gender_Group, gender_NA, class_NA, Black_Group, NA_NA, race_Group, Group_Group, race_Unknowable, gender_Unknowable, Unknowable_Unknowable, White_Group)) %>% 
+  mutate(across(where(is.numeric), ~ replace_na(.x, 0))) %>% 
+  relocate(novel)
 ```
 
 
 ```{r}
-write_csv(all_data, "refined_data/consolidated_purchaser_demographics.csv")
+write_csv(all_data_demographic, "refined_data/consolidated_purchaser_demographics.csv")
 ```
 
 
