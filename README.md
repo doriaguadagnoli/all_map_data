@@ -94,6 +94,7 @@ To import a tileset:
 | shell_shaker_location_type_count.csv      | shell_shaker_location_type_co-b1tgqx | `burgerjh.ddpgdoel` |
 | shell_shaker_purchased_from_location.csv  | shell_shaker_purchased_from_l-3b6v3a | `burgerjh.dbsvw2nu`  |
 | shell_shaker_purchaser_location.csv       | shell_shaker_purchaser_locati-361na1     | `burgerjh.3i0i4wf9` |
+| all_purchaser_demographic.csv       | all_purchaser_demographic-7nzlqb     | `burgerjh.06uncvs9` |
 
 ---
 
