@@ -176,6 +176,126 @@ write_csv(items_purchased_by_location, output_file("items_purchased_by_location"
 walk(novel_dirs, process_novel)
 ```
 
+```{r}
+process_novel_consolidated <- function(novel) {
+  
+  if (novel == "as_i_lay_dying") {
+    message("Skipping novel '", novel, "' because it is excluded.")
+    return(NULL)
+  }
+  
+  data_path <- file.path("data", novel)
+  csv_files <- list.files(file.path("data", novel), pattern = "\\.csv$", full.names = TRUE)
+
+  primary_path    <- csv_files[str_detect(csv_files, "primary")]
+  locations_path  <- csv_files[str_detect(csv_files, "locations")]
+  characters_path <- csv_files[str_detect(csv_files, "characters")]
+
+  if (length(primary_path) != 1 || length(locations_path) != 1 || length(characters_path) != 1) {
+    message("Skipping novel '", novel, "' because required file(s) are missing or duplicated.")
+    return(NULL)
+  }
+
+  primary_sheet <- read_csv(primary_path, show_col_types = FALSE)
+  locations     <- read_csv(locations_path, show_col_types = FALSE)
+  characters    <- read_csv(characters_path, show_col_types = FALSE)
+
+  # Merge all locations + characters (like before)
+  all_locations <- primary_sheet %>% 
+    drop_na(first_6_words) %>%
+    left_join(locations, by = c("location" = "name")) %>%
+    relocate(coordinates, .after = location) %>%
+    separate(coordinates, into = c("lat", "long"), sep = ", ", convert = TRUE)
+  
+  # Join with characters (for purchaser only)
+  df <- all_locations %>%
+    inner_join(characters, by = c("purchaser" = "name")) %>%
+    filter(location_type == "economic")
+  
+  if (nrow(df) == 0) {
+    message("No economic transactions for '", novel, "'. Skipping.")
+    return(NULL)
+  }
+  
+  # Race breakdown
+  race_summary <- df %>%
+    group_by(location, lat, long, race) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    pivot_wider(
+      names_from = race,
+      values_from = count,
+      values_fill = 0,
+      names_prefix = "race_"
+    )
+  
+  # Gender breakdown
+  gender_summary <- df %>%
+    group_by(location, lat, long, gender) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    pivot_wider(
+      names_from = gender,
+      values_from = count,
+      values_fill = 0,
+      names_prefix = "gender_"
+    )
+  
+  # Class breakdown
+  class_summary <- df %>%
+    group_by(location, lat, long, class) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    pivot_wider(
+      names_from = class,
+      values_from = count,
+      values_fill = 0,
+      names_prefix = "class_"
+    )
+  
+  # Race + Gender crosstab
+  race_gender_summary <- df %>%
+    mutate(race_gender = paste(race, gender, sep = "_")) %>%
+    group_by(location, lat, long, race_gender) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    pivot_wider(
+      names_from = race_gender,
+      values_from = count,
+      values_fill = 0
+    )
+  
+  # Merge everything together
+  consolidated <- df %>%
+    select(location, lat, long) %>%
+    distinct() %>%
+    left_join(race_summary, by = c("location", "lat", "long")) %>%
+    left_join(gender_summary, by = c("location", "lat", "long")) %>%
+    left_join(class_summary, by = c("location", "lat", "long")) %>%
+    left_join(race_gender_summary, by = c("location", "lat", "long")) %>%
+    mutate(novel = novel)
+  
+  return(consolidated)
+}
+
+```
+
+
+```{r}
+# Loop through all novels and stack them
+all_data <- map_dfr(novel_dirs, process_novel_consolidated)
+
+# Check result
+glimpse(all_data)
+```
+
+```{r}
+all_data_demographic <- all_data %>% 
+                select(!c(race_NA,gender_Group,gender_NA,class_NA,Black_Group,NA_NA,race_Group,Group_Group,race_Unknowable,gender_Unknowable,Unknowable_Unknowable,White_Group)) %>% 
+           relocate(novel)
+```
+
+
+```{r}
+write_csv(all_data, "refined_data/consolidated_purchaser_demographics.csv")
+```
+
 
 ```{r}
 dy_data <- read_csv("data/as_i_lay_dying/events.csv")
